@@ -3,14 +3,12 @@
 ## Overview of the analysis
 AutosRUs’ newest prototype, the MechaCar, is suffering from production troubles that are blocking the manufacturing team’s progress. AutosRUs’ upper management has called on the data analytics team to review the production data for insights that may help the manufacturing team.<br />
 
-The technical analysis deliverables required to complete the MechaCar_Statistical analysis include <br />
+The technical analysis deliverables required to complete the MechaCar_Statistical analysis include: <br />
 
 1. Linear Regression to Predict MPG.
 2. Summary Statistics on Suspension Coils.
 3. T-Test on Suspension Coils.
 4. Design a Study Comparing the MechaCar to the Competition.
-
-
 
 ## Resources
 - Data Source: This analysis was performed using the  [MechaCar MPG](https://github.com/aobasuyi/MechaCar_Statistical_Analysis/blob/main/Analysis/MechaCar_mpg.csv) and [Suspension Coil](https://github.com/aobasuyi/MechaCar_Statistical_Analysis/blob/main/Analysis/Suspension_Coil.csv) datasets.
@@ -18,9 +16,7 @@ The technical analysis deliverables required to complete the MechaCar_Statistica
 - Software: R 4.1.0 and RStudio Desktop 1.4.1717
 
 ## A. Linear Regression to Predict MPG:
-
 -  Using your knowledge of R, design a linear model that predicts the mpg of MechaCar prototypes using several variables from the MechaCar MPG data. <br />
-
 ##### Code:
 ```
 #Import MechaCar dataset
@@ -33,20 +29,20 @@ lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AW
 summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD,data=MpgCar))
 
 ```
-
 ##### Result:
-
+i.) Multiple linear regression analysis:<br />
 <br /> ![Image](Images/MechaCar_lm_summary.png) <br />
 
-- According to the result above, vehicle length and ground clearance (as well as intercept) are statistically unlikely to provide random amounts of variance to the linear mode. This means that vehicle length and ground clearance have a significant impact on mpg values of MechaCar prototypes. A significant intercept could mean that the significant features (such as vehicle length and ground clearance) may need scaling or transforming to help improve the predictive power of the model.It may also mean that there are other variables that can help explain the variability of our dependent variable that have not been included in our model. 
+- According to the result above, vehicle length and ground clearance (as well as intercept) are statistically unlikely to provide random amounts of variance to the linear mode. This means that vehicle length and ground clearance have significant impact on mpg values of MechaCar prototypes. A significant intercept could mean that the significant features (such as vehicle length and ground clearance) may need scaling or transforming to help improve the predictive power of the model.
 
-- The p-value of our linear regression analysis is (*p*-value = 5.35e-11) is much smaller than our assumed significance level of 0.05%. Therefore, we can state that there is sufficient evidence to reject our null hypothesis, which means that the slope of our linear model is not zero.
+- The p-value of the linear regression analysis (*p* = 5.35e-11) is much smaller than our assumed significance level of 0.05%. Therefore, we can state that there is sufficient evidence to reject our null hypothesis, which means that the slope of our linear model is not zero.
 
  - The r-squared value of our linear regression model is 0.72, which means that roughly 70% of the variablilty of our dependent variable (mpg predictions) is explained using this linear model. The r-squared value shows the model has the ability to strongly predict future mpg observations 70% while the p-value remained significant.
 
+ii.) Correlation matrix:<br />
 <br /> ![Image](Images/MechaCar_Correlation.png) <br />
 
- - The correlation matrix shows that vehicle length has strong positive correlation; ground clearance, weak positive correlation and AWD, very weak negative correlation with mpg values respectively.
+ - The correlation matrix result shows that vehicle length has strong positive correlation; ground clearance, weak positive correlation and AWD, very weak negative correlation with mpg values respectively. The strong correlations between some of the independent variables and our dependent variable may have improved the performance of our model, however, lack of significant variables may also be evidence of overfitting.
  
  
 ## B. Summary Statistics on Suspension Coils:
