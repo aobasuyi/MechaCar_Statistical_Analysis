@@ -116,4 +116,4 @@ Ha : The slope of the linear model is not zero, or m ≠ 0
 - We will use a multiple linear regression which uses multiple independent variables to account for parts of the total variance observed in the dependent variable.
 
 **d.) Data is needed to run the statistical test:**<br />
-- The data to collect - 2 years maintenance costs for 40 MechaCars and 40 competiton brands collected from Services department and from study participants questionaire
+- The data to collect: - 2 years maintenance costs for 40 MechaCars and 40 competiton brands collected from Services department and from study participants questionaire
