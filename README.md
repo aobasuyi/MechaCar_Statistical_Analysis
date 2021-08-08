@@ -37,7 +37,7 @@ i.) Multiple linear regression analysis:<br />
 
 - The p-value of the linear regression analysis (*p* = 5.35e-11) is much smaller than our assumed significance level of 0.05%. Therefore, we can state that there is sufficient evidence to reject our null hypothesis, which means that the slope of our linear model is not zero.
 
- - The r-squared value of our linear regression model is 0.72, which means that roughly 70% of the variablilty of our dependent variable (mpg predictions) is explained using this linear model. The r-squared value shows the model has over 70% ability to strongly predict future mpg observations while the p-value remained significant.
+ - The r-squared value of our linear regression model is 0.72, which means that roughly 70% of the variablilty of our dependent variable (mpg predictions) is explained using this linear model. The r-squared value shows the model has over 70% ability to predict future mpg observations while the p-value remained significant.
 
 ii.) Correlation matrix:<br />
 <br /> ![Image](Images/MechaCar_Correlation.png) <br />
