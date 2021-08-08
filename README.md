@@ -16,7 +16,7 @@ The technical analysis deliverables required to complete the MechaCar_Statistica
 - Software: R 4.1.0 and RStudio Desktop 1.4.1717
 
 ## A. Linear Regression to Predict MPG:
--  Using your knowledge of R, design a linear model that predicts the mpg of MechaCar prototypes using several variables from the MechaCar MPG data. <br />
+Using your knowledge of R, design a linear model that predicts the mpg of MechaCar prototypes using several variables from the MechaCar MPG data. <br />
 ##### Code:
 ```
 #Import MechaCar dataset
@@ -45,9 +45,9 @@ ii.) Correlation matrix:<br />
  - The correlation matrix result shows that vehicle length has strong positive correlation; ground clearance, weak positive correlation and AWD, very weak negative correlation with mpg values respectively. The strong correlations between some of the independent variables and our dependent variable may have improved the performance of our model, however, lack of significant variables may also be evidence of overfitting.
  
  ## B. Summary Statistics on Suspension Coils:
-- Using your knowledge of R, create a summary statistics table to show:
-    - The suspension coil’s PSI continuous variable across all manufacturing lots
-    - The following PSI metrics for each lot: mean, median, variance, and standard deviation.
+Using your knowledge of R create a summary statistics table to show:
+- The suspension coil’s PSI continuous variable across all manufacturing lots
+- The following PSI metrics for each lot: mean, median, variance, and standard deviation.
 ##### Code:
 ```
 #Import Suspension_Coil dataset
@@ -67,8 +67,7 @@ summarize_Scoil2 <- SCoil %>% group_by(Manufacturing_Lot)%>%summarize(Mean=mean(
 - According to the result above, the variance of the suspension coils for manufactuing Lots3, (*var* = 170.29) exceeds 100 pounds per square inch. This means that the current manufacturing data for Lots1 and Lots2 met the MechaCar design specification while the manufacturing data for Lots3 did not meet MechaCar design specification.
 
 ## C. T-Tests on Suspension Coils: 
-- Using your knowledge of R, perform t-tests determine if all manufacturing lots and each lot individually are statistically different from the population mean of 1,500 pounds per square inch
-
+Using your knowledge of R, perform t-tests to determine if all manufacturing lots and each lot individually are statistically different from the population mean of 1,500 pounds per square inch.
 ##### Code:
 
 ```
@@ -81,55 +80,40 @@ filter_SCoil3 <- subset(SCoil, Manufacturing_Lot == "Lot3") #filter by Lot2
 
 ```
 ##### Result:
+<br /> ![Image](Images/T_test_all%20manufacturing%20lots.png) <br />
 
-<br /> ![Image](Resources/Visualization/Trips_usertype_gender.png) <br />
+- The result above shows that (*p* = 0.0602) is above our significance level of 0.05 percent. We do not have sufficient evidence to reject the null hypothesis, and would state that the two means are statistically similar.
 
-- The result above shows that the *p*-value = 0.06028 is above our significance level of 0.05 percent. We do not have sufficient evidence to reject the null hypothesis, and would state that the two means are statistically similar.
+<br /> ![Image](Images/T_test_manufacturing%20lot1.png) <br />
 
-<br /> ![Image](Resources/Visualization/Trips_usertype_gender.png) <br />
+- This result shows that (*p* = 1) is above our significance level of 0.05 percent. We do not have sufficient evidence to reject the null hypothesis, and we would state that the two means are statistically similar.
 
-- The *p*-value = 1 is above our significance level of 0.05 percent. We do not have sufficient evidence to reject the null hypothesis, and we would state that the two means are statistically similar.
+<br /> ![Image](Images/T_test_manufacturing%20lot2.png) <br />
 
-<br /> ![Image](Resources/Visualization/Trips_usertype_gender.png) <br />
+- The result above shows that (*p* = 0.6072) is above our significance level of 0.05 percent. We do not have sufficient evidence to reject the null hypothesis, and would state that the two means are statistically similar.
 
-- The result above shows that the *p*-value = 0.6072 is above our significance level of 0.05 percent. We do not have sufficient evidence to reject the null hypothesis, and would state that the two means are statistically similar.
+<br /> ![Image](Images/T_test_manufacturing%20lot3.png) <br />
 
-<br /> ![Image](Resources/Visualization/Trips_usertype_gender.png) <br />
-
-- The result above shows that the *p*-value = 0.04168 is below our significance level of 0.05 percent. We would therefore, reject the null hypothesis, and state that the two means are  not statistically similar..
+- The result above shows that (*p* = 0.04168) is below our significance level of 0.05 percent. We would therefore, reject the null hypothesis, and state that the two means are  not statistically similar..
 
 
-## D. Study Design: MechaCar vs Competition
+## D. Study Design: MechaCar vs Competition:
+Using your knowledge of R, design a statistical study to compare performance of the MechaCar vehicles against performance of vehicles from other manufacturers.<br />
 
-- Using your knowledge of R, design a statistical study to compare performance of the MechaCar vehicles against performance of vehicles from other manufacturers.
-
-a.) Write a short description of a statistical study that can quantify how the MechaCar performs against the competition. In your study design, think critically about what metrics would be of interest to a consumer: for a few examples, cost, city or highway fuel efficiency, horse power, maintenance cost, or safety rating.
-
-b.) In your description, address the following questions:
-What metric or metrics are you going to test?
-What is the null hypothesis or alternative hypothesis?
-What statistical test would you use to test the hypothesis? And why?
-What data is needed to run the statistical test?-
-
-<br /><br />
-
-f we want to verify that a car battery ages at an appropriate rate, we would need to test our question with a regression model. If we were to use a multiple linear regression model, we would need to collect numerical variables, such as number of uses, time, battery capacity, tire tread, and engine horsepower.
-
-a.) Metric to be tested: 
+**a.) Metric to be tested:**<br />
 - To verify the maintenance cost of MechaCar compared against the competition.
 
-b.) The null hypothesis or alternative hypothesis:
-
+**b.) The null hypothesis or alternative hypothesis:**<br />
 
 H0 : The slope of the linear model is zero, or m = 0
 
 Ha : The slope of the linear model is not zero, or m ≠ 0
 
-If there is no significant linear relationship, each dependent value would be determined by random chance and error. Therefore, our linear model would be a flat line with a slope of 0.
+- If there is no significant linear relationship, each dependent value would be determined by random chance and error. Therefore, our linear model would be a flat line with a slope of 0.
 
-c.) Statistical test to test the hypothesis:
-- A multiple linear regression which uses multiple independent variables to account for parts of the total variance observed in the dependent variable.
-- How much variance in the maintenance cost is accounted for in a linear combination of independent variables such as mileage, highway fuel efficiency (mpg), engine horse power, vehicle weight and number of uses, ?
+**c.) Statistical test to test the hypothesis:**<br />
+- How much variance in the maintenance cost is accounted for in a linear combination of independent variables such as mileage, highway fuel efficiency (mpg), engine horse power, vehicle weight and number of uses?
+- We will use a multiple linear regression which uses multiple independent variables to account for parts of the total variance observed in the dependent variable.
 
-d.) Data is needed to run the statistical test:
+**d.) Data is needed to run the statistical test:**<br />
 - The data to collect - 2 years maintenance costs for 40 MechaCars and 40 competiton brands collected from Services department and from study participants questionaire
