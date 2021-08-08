@@ -44,15 +44,11 @@ ii.) Correlation matrix:<br />
 
  - The correlation matrix result shows that vehicle length has strong positive correlation; ground clearance, weak positive correlation and AWD, very weak negative correlation with mpg values respectively. The strong correlations between some of the independent variables and our dependent variable may have improved the performance of our model, however, lack of significant variables may also be evidence of overfitting.
  
- 
-## B. Summary Statistics on Suspension Coils:
-
+ ## B. Summary Statistics on Suspension Coils:
 - Using your knowledge of R, create a summary statistics table to show:
     - The suspension coil’s PSI continuous variable across all manufacturing lots
     - The following PSI metrics for each lot: mean, median, variance, and standard deviation.
-
 ##### Code:
-
 ```
 #Import Suspension_Coil dataset
 SCoil <- read.csv(file='Suspension_Coil.csv',check.names=F,stringsAsFactors = F)
@@ -64,14 +60,11 @@ summarize_Scoil2 <- SCoil %>% group_by(Manufacturing_Lot)%>%summarize(Mean=mean(
 
 ```
 ##### Results:
-
 <br /> ![Image](Images/Summarize_SCoil.png) <br />
+- The design specifications for the MechaCar suspension coils dictate that the variance of the suspension coils must not exceed 100 pounds per square inch. The result above shows that the variance of the suspension coils for all manufactuing Lots (*var* = 62.30) meets MechaCar design specifications. 
 
-- The design specifications for the MechaCar suspension coils dictate that the variance of the suspension coils must not exceed 100 pounds per square inch. The result above shows that the variance of the suspension coils for all manufactuing lot(*var* = 62.30) meets MechaCar design specifications. 
-
-<br /> ![Image](Resources/Visualization/Trips_usertype_gender.png) <br />
-
-- According to this result, the variance of the suspension coils for manufactuing lots 3, (*var* = 170) exceeds 100 pounds per square inch. This means that the current manufacturing data for lots1 and lots2 met the MechaCar design specification while the manufacturing data for lots3 did not meet MechaCar design specification.
+<br /> ![Image](Images/SummarizeSCoil2.png) <br />
+- According to the result above, the variance of the suspension coils for manufactuing Lots3, (*var* = 170.29) exceeds 100 pounds per square inch. This means that the current manufacturing data for Lots1 and Lots2 met the MechaCar design specification while the manufacturing data for Lots3 did not meet MechaCar design specification.
 
 ## C. T-Tests on Suspension Coils: 
 - Using your knowledge of R, perform t-tests determine if all manufacturing lots and each lot individually are statistically different from the population mean of 1,500 pounds per square inch
